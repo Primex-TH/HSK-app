@@ -4,13 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>HSK1-6 Ultimate Learning System</title>
-  <link rel="apple-touch-icon" href="logo.png?v=3">
-  <link rel="icon" type="image/png" href="logo.png?v=3">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="HSK Master">
-  <meta name="theme-color" content="#2b2d42">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans+Thai:wght@400;600&family=Long+Cang&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans+Thai:wght@400;600&family=Noto+Sans+SC:wght@500;700&display=swap">
   <style>
     :root {
       --primary: #d90429;
@@ -263,11 +257,42 @@
   .card2{background:var(--card);border-radius:22px;padding:16px;margin-top:12px;box-shadow:0 4px 12px rgba(60,45,25,.08)}
   .card2 input{width:100%;box-sizing:border-box;padding:12px 14px;border:1.5px solid #d9cfbd;border-radius:14px;background:#fffdf8;font-family:inherit;margin:10px 0}
 </style>
+<style id="theme4">
+  body{font-family:'Noto Sans Thai','Noto Sans SC','PingFang SC','Hiragino Sans GB','Microsoft YaHei',-apple-system,sans-serif;font-size:1rem}
+  h1,h2,h3,.sec,.app{font-family:'DM Serif Display','Noto Sans Thai','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif}
+  .hanzi,#vocabHanzi{font-family:'Noto Sans SC','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif!important;font-size:5.2rem!important;font-weight:500!important;line-height:1.15}
+  #vocabExZh,#shadowText{font-family:'Noto Sans SC','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif!important;font-size:1.5rem!important;font-weight:500!important;line-height:1.5}
+  .logo,.hero-card::after{font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-weight:500}.logo{font-size:2.2rem}
+  html[data-lang=en] .sub:empty::before{content:"Learn Chinese every day"}
+  .brand{margin-left:58px}
+  .menu-btn{position:absolute;top:30px;left:30px;z-index:30;width:42px;height:42px;border:0;border-radius:14px;background:rgba(255,255,255,.85);box-shadow:0 3px 10px rgba(60,45,25,.15);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;padding:0}
+  .menu-btn span{display:block;width:18px;height:2.5px;border-radius:2px;background:#1c1a17}
+  .menu-pop{position:absolute;top:80px;left:22px;z-index:40;width:248px;background:#fbf7ee;border-radius:20px;padding:14px 14px 12px;box-shadow:0 12px 30px rgba(60,45,25,.25);opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .18s,transform .18s,visibility .18s}
+  .menu-pop.open{opacity:1;visibility:visible;transform:none}
+  .mp-t{font-family:'DM Serif Display','Noto Sans Thai',sans-serif;font-size:1.25rem;margin-bottom:4px}
+  .mp-l{font-size:.78rem;color:var(--muted);margin:12px 0 6px}.mp-a{font-size:.82rem;color:var(--ink);line-height:1.6}
+  .seg{display:flex;gap:6px}.seg button{flex:1;border:1.5px solid #d9cfbd;background:#fffdf8;border-radius:12px;padding:8px 4px;font:inherit;font-size:.9rem;color:var(--ink)}
+  .seg button.on{background:var(--red);border-color:var(--red);color:#fff}
+  .mk{background:var(--card);border-radius:18px;padding:12px 16px;margin-top:10px;box-shadow:0 4px 12px rgba(60,45,25,.07)}
+  .mk small{color:var(--muted)}.mk .bad{color:#b64a3a;text-decoration:line-through}.mk .good{color:#2f8f6b;font-weight:700}
+  .hi{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid #e6dccb}.hi:last-child{border:0}.hi b{color:var(--red)}
+  .muted{color:var(--muted);margin:0}
+</style>
 </head>
 <body>
 
 <div class="container">
-
+  <button id="menuBtn" class="menu-btn" onclick="toggleMenu(event)" aria-label="Menu"><span></span><span></span><span></span></button>
+  <div id="menuPop" class="menu-pop">
+    <div class="mp-t">เมนู</div>
+    <div class="mp-l nt">ภาษา / Language</div>
+    <div class="seg"><button id="lgTh" class="nt" onclick="setLang('th')">ไทย</button><button id="lgEn" class="nt" onclick="setLang('en')">English</button></div>
+    <div class="mp-l">ขนาดตัวอักษร</div>
+    <div class="seg"><button data-fs="s" onclick="setFs('s')">เล็ก</button><button data-fs="m" onclick="setFs('m')">กลาง</button><button data-fs="l" onclick="setFs('l')">ใหญ่</button></div>
+    <div class="mp-l">เกี่ยวกับแอป</div>
+    <div class="mp-a">HSK Master · เวอร์ชัน 1.1<br>คำศัพท์ HSK 1–6 รวม 651 คำ<br>ข้อมูลเก็บไว้ในเครื่องของคุณเท่านั้น</div>
+  </div>
+  
   <header class="hero">
     <svg class="mist" viewBox="0 0 400 140" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="70" cy="175" r="95" fill="#e6dfd0"/><circle cx="195" cy="190" r="105" fill="#ece6d8"/><circle cx="335" cy="175" r="98" fill="#e3dbca"/><rect y="122" width="400" height="18" fill="#f4eee2" opacity=".85"/></svg><svg class="art on" data-s="dashboardTab" viewBox="0 0 200 140" preserveAspectRatio="xMaxYMax meet" aria-hidden="true"><circle cx="130" cy="64" r="44" fill="#e9e2d3"/><rect x="116" y="104" width="28" height="22" fill="#b9b7b0"/><polygon points="96,104 164,104 150,92 110,92" fill="#e8472f"/><rect x="118" y="80" width="24" height="12" fill="#b9b7b0"/><polygon points="104,80 156,80 146,70 114,70" fill="#e8472f"/><rect x="121" y="61" width="18" height="9" fill="#b9b7b0"/><polygon points="110,61 150,61 142,52 118,52" fill="#e8472f"/><rect x="124" y="45" width="12" height="7" fill="#b9b7b0"/><polygon points="116,45 144,45 130,34" fill="#e8472f"/><rect x="129" y="20" width="2" height="14" fill="#6b6e72"/><rect x="60" y="126" width="140" height="3" fill="#c9c4ba"/></svg><svg class="art" data-s="srsTab" viewBox="16 0 200 140" preserveAspectRatio="xMaxYMax meet" aria-hidden="true"><line x1="100" y1="0" x2="100" y2="0" stroke="#9a9da0" stroke-width="1.5"/><rect x="92.5" y="0" width="15" height="5" rx="1" fill="#6b6e72"/><ellipse cx="100" cy="19" rx="15" ry="14" fill="#e8472f"/><path d="M88.0 11.3H112.0M85 19H115M88.0 26.7H112.0" stroke="#f8f3e9" stroke-width="1.6" opacity=".7"/><rect x="92.5" y="33" width="15" height="5" rx="1" fill="#6b6e72"/><line x1="100" y1="38" x2="100" y2="54" stroke="#e8472f" stroke-width="2.5"/><line x1="142" y1="0" x2="142" y2="8" stroke="#9a9da0" stroke-width="1.5"/><rect x="131.5" y="8" width="21" height="5" rx="1" fill="#6b6e72"/><ellipse cx="142" cy="33" rx="21" ry="20" fill="#e8472f"/><path d="M125.2 22.0H158.8M121 33H163M125.2 44.0H158.8" stroke="#f8f3e9" stroke-width="1.6" opacity=".7"/><rect x="131.5" y="53" width="21" height="5" rx="1" fill="#6b6e72"/><line x1="142" y1="58" x2="142" y2="74" stroke="#e8472f" stroke-width="2.5"/><line x1="186" y1="0" x2="186" y2="0" stroke="#9a9da0" stroke-width="1.5"/><rect x="178.5" y="0" width="15" height="5" rx="1" fill="#6b6e72"/><ellipse cx="186" cy="19" rx="15" ry="14" fill="#e8472f"/><path d="M174.0 11.3H198.0M171 19H201M174.0 26.7H198.0" stroke="#f8f3e9" stroke-width="1.6" opacity=".7"/><rect x="178.5" y="33" width="15" height="5" rx="1" fill="#6b6e72"/><line x1="186" y1="38" x2="186" y2="54" stroke="#e8472f" stroke-width="2.5"/><rect x="60" y="126" width="140" height="3" fill="#c9c4ba"/></svg><svg class="art" data-s="shadowingTab" viewBox="34 0 200 140" preserveAspectRatio="xMaxYMax meet" aria-hidden="true"><path d="M140 128 L60.3 61.2 A104 104 0 0 1 219.7 61.2 Z" fill="#f1ebdd" stroke="#9a9da0" stroke-width="1.5"/><line x1="140" y1="128" x2="206.8" y2="48.3" stroke="#c9c4ba" stroke-width="1.2"/><line x1="140" y1="128" x2="192.0" y2="37.9" stroke="#c9c4ba" stroke-width="1.2"/><line x1="140" y1="128" x2="175.6" y2="30.3" stroke="#c9c4ba" stroke-width="1.2"/><line x1="140" y1="128" x2="158.1" y2="25.6" stroke="#c9c4ba" stroke-width="1.2"/><line x1="140" y1="128" x2="140.0" y2="24.0" stroke="#c9c4ba" stroke-width="1.2"/><line x1="140" y1="128" x2="121.9" y2="25.6" stroke="#c9c4ba" stroke-width="1.2"/><line x1="140" y1="128" x2="104.4" y2="30.3" stroke="#c9c4ba" stroke-width="1.2"/><line x1="140" y1="128" x2="88.0" y2="37.9" stroke="#c9c4ba" stroke-width="1.2"/><line x1="140" y1="128" x2="73.2" y2="48.3" stroke="#c9c4ba" stroke-width="1.2"/><path d="M140 128 L95.6 90.7 A58 58 0 0 1 184.4 90.7 Z" fill="#e8472f"/><circle cx="140" cy="128" r="6" fill="#6b6e72"/><rect x="60" y="126" width="140" height="3" fill="#c9c4ba"/></svg><svg class="art" data-s="aiTutorTab" viewBox="16 0 200 140" preserveAspectRatio="xMaxYMax meet" aria-hidden="true"><circle cx="150" cy="62" r="42" fill="#e9e2d3"/><g transform="translate(140 58) rotate(-12) scale(1.15)"><polygon points="-22,0 -44,-14 -44,14" fill="#e8472f" opacity=".85"/><ellipse cx="0" cy="0" rx="28" ry="13" fill="#e8472f"/><ellipse cx="-4" cy="-2" rx="10" ry="5" fill="#f8f3e9" opacity=".9"/><polygon points="-2,10 10,22 12,8" fill="#e8472f" opacity=".8"/><circle cx="19" cy="-3" r="2.2" fill="#1c1a17"/></g><g transform="translate(176 100) rotate(172) scale(0.8)"><polygon points="-22,0 -44,-14 -44,14" fill="#6b6e72" opacity=".85"/><ellipse cx="0" cy="0" rx="28" ry="13" fill="#6b6e72"/><ellipse cx="-4" cy="-2" rx="10" ry="5" fill="#f8f3e9" opacity=".9"/><polygon points="-2,10 10,22 12,8" fill="#6b6e72" opacity=".8"/><circle cx="19" cy="-3" r="2.2" fill="#1c1a17"/></g><path d="M80 112q10-8 20 0t20 0t20 0M150 124q10-8 20 0t20 0" stroke="#9a9da0" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="60" y="126" width="140" height="3" fill="#c9c4ba"/></svg><svg class="art" data-s="examTab" viewBox="0 0 200 140" preserveAspectRatio="xMaxYMax meet" aria-hidden="true"><circle cx="130" cy="68" r="36" fill="none" stroke="#e8472f" stroke-width="8" stroke-dasharray="190 36" transform="rotate(-70 130 68)" stroke-linecap="round"/><g transform="translate(148 74) rotate(38)"><rect x="-4" y="-62" width="8" height="58" rx="4" fill="#b9b7b0"/><rect x="-5.5" y="-4" width="11" height="9" rx="1" fill="#6b6e72"/><path d="M-5.5 5H5.5L2 32Q0 36-2 32Z" fill="#1c1a17"/></g><rect x="70" y="124" width="110" height="3" rx="1.5" fill="#c9c4ba"/><rect x="60" y="126" width="140" height="3" fill="#c9c4ba"/></svg>
     <div class="brand"><span class="logo">字</span><div><div class="app">HSK Master</div><div class="sub" id="hello"></div></div></div>
@@ -370,11 +395,19 @@
   <!-- TAB 4: AI GRAMMAR CHECK -->
   <div id="aiTutorTab" class="section">
     <h2>3. ตรวจไวยากรณ์ & การแต่งประโยค</h2>
-    <p>นำคำศัพท์ที่เรียนมาแต่งประโยคภาษาจีน เพื่อให้ AI วิเคราะห์แก้ไขไวยากรณ์สไตล์ HSK:</p>
+    <p>นำคำศัพท์ที่เรียนมาแต่งประโยคภาษาจีน เพื่อตรวจไวยากรณ์สไตล์ HSK:</p>
     <textarea id="userGrammarInput" rows="4" placeholder="พิมพ์ประโยคภาษาจีนของคุณที่นี่ เช่น: 我昨天去买两本书。"></textarea>
     <button class="btn" onclick="checkGrammarWithAI()">✅ ตรวจประโยค</button>
     
     <div id="aiOutput" class="output-box">ผลการวิเคราะห์ไวยากรณ์จะปรากฏที่นี่...</div>
+    <h3 class="sec">ข้อผิดพลาดที่พบบ่อย</h3>
+    <div class="mk"><div><span class="bad">我不有钱</span> → <span class="good">我没有钱</span></div><small>ปฏิเสธ 有 ใช้ 没有</small></div>
+    <div class="mk"><div><span class="bad">我是很高兴</span> → <span class="good">我很高兴</span></div><small>ไม่ต้องมี 是 นำหน้าคำคุณศัพท์</small></div>
+    <div class="mk"><div><span class="bad">我二个朋友</span> → <span class="good">我有两个朋友</span></div><small>ก่อนลักษณนามใช้ 两</small></div>
+    <div class="mk"><div><span class="bad">昨天我不去</span> → <span class="good">昨天我没去</span></div><small>อดีตใช้ 没 ปฏิเสธ</small></div>
+    <div class="mk"><div><span class="bad">你有没有钱吗？</span> → <span class="good">你有没有钱？</span></div><small>ไม่ต้องใช้ 吗 กับ A不A</small></div>
+    <h3 class="sec">ประโยคที่ตรวจล่าสุด</h3>
+    <div id="gHist" class="card2"></div>
   </div>
 
   <!-- TAB 5: EXAM -->
@@ -1045,5 +1078,125 @@
     };
   })();
 </script>
+<script>
+/* ===== รอบนี้: เมนูสามขีด เปลี่ยนภาษา ขนาดตัวอักษร ประวัติไวยากรณ์ แก้ซูมตอนพิมพ์ ===== */
+(function () {
+  const ls = (k, v) => { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) {} };
+  const EXACT = {'หน้าหลัก':'Home','ทบทวน':'Review','พูดตาม':'Speak','ไวยากรณ์':'Grammar','สอบ':'Exam','ระดับ':'Level','ผู้เรียน':'Learner','จำได้แล้ว':'Learned',
+    '⭐ XP รวม':'⭐ Total XP','📖 คำที่จำได้':'📖 Words learned','🏅 ชุดสอบที่ผ่าน':'🏅 Sets passed','เมนู':'Menu','ขนาดตัวอักษร':'Text size','เล็ก':'Small','กลาง':'Medium','ใหญ่':'Large',
+    'เกี่ยวกับแอป':'About','เวอร์ชัน':'Version','ข้อผิดพลาดที่พบบ่อย':'Common mistakes','ประโยคที่ตรวจล่าสุด':'Recent sentences','ผิด':'Wrong','ถูก':'Right'};
+  const RX = [[/จำได้แล้ว (\d+)\/(\d+) คำ/g,'Learned $1/$2 words'],[/ข้อ (\d+):/g,'Q$1:'],[/(\d)\/3 ชุด/g,'$1/3 sets'],[/คะแนน: /g,'Score: '],[/ชุดที่ /g,'Set ']];
+  const P = [
+   ['ระดับที่กำลังเรียน','Current level'],['เส้นทาง HSK 1–6','HSK 1–6 path'],['ชื่อผู้เรียน','Learner name'],['พิมพ์ชื่อของคุณที่นี่...','Type your name here...'],['บันทึกชื่อ','Save name'],
+   ['🗑️ รีเซ็ตความก้าวหน้า','🗑️ Reset progress'],['รีเซ็ตความก้าวหน้า','Reset progress'],
+   ['ล้าง XP ระดับ HSK คำที่จำได้ และผลสอบ เพื่อเริ่มเรียนใหม่ (ชื่อยังอยู่)','Clears XP, HSK level, learned words and exam results so you can start over (your name stays).'],
+   ['1. คลังคำศัพท์ & ระบบทบทวน SRS','1. Vocabulary & SRS review'],['เลือกระดับ HSK ที่ต้องการทบทวน:','Choose the HSK level to review:'],['(ศัพท์พื้นฐาน)','(basic words)'],['(ศัพท์ชั้นกลาง)','(intermediate)'],['(ศัพท์ชั้นสูง)','(advanced)'],
+   ['🔊 ฟังออกเสียงคำศัพท์','🔊 Listen to the word'],['🔊 ฟังเสียงประโยค','🔊 Listen to the sentence'],['🔊 ฟังเสียงต้นแบบ','🔊 Listen to the model'],['ประเมินระดับความจำ (SRS Rating):','Rate your memory (SRS Rating):'],
+   ['จำไม่ได้เลย (Again)','Forgot (Again)'],['ค่อนข้างยาก (Hard)','Difficult (Hard)'],['จำได้แม่น (Good)','Remembered (Good)'],['2. ฝึกพูดตามเสียงต้นแบบ (Shadowing)','2. Speaking practice (Shadowing)'],
+   ['🎙️ เริ่มพูดบันทึกเสียง','🎙️ Start speaking'],['➡️ ประโยคถัดไป','➡️ Next sentence'],['กดปุ่มเริ่มพูด แล้วลองพูดตามประโยคด้านบน...','Tap Start speaking, then repeat the sentence above...'],
+   ['3. ตรวจไวยากรณ์ & การแต่งประโยค','3. Grammar check & sentence writing'],['นำคำศัพท์ที่เรียนมาแต่งประโยคภาษาจีน เพื่อตรวจไวยากรณ์สไตล์ HSK:','Write a Chinese sentence with words you have learned and check its HSK-style grammar:'],
+   ['พิมพ์ประโยคภาษาจีนของคุณที่นี่ เช่น: ','Type your Chinese sentence here, e.g. '],['✅ ตรวจประโยค','✅ Check sentence'],['ผลการวิเคราะห์ไวยากรณ์จะปรากฏที่นี่...','Grammar results will appear here...'],
+   ['4. แบบทดสอบวัดระดับเพื่อเลื่อนขั้น HSK','4. HSK level-up exam'],['ส่งข้อสอบวัดระดับ','Submit exam'],['🔄 ทำชุดนี้ใหม่','🔄 Retake this set'],['(ผ่านที่ 60% · ต้องผ่านครบ 3 ชุดจึงปลดล็อก HSK ถัดไป)','(pass at 60% · pass all 3 sets to unlock the next HSK)'],
+   ['จำคำศัพท์ระดับนี้ครบแล้ว! ไปสอบเลื่อนระดับได้เลย','You have learned every word at this level! Go take the level-up exam.'],['เบราว์เซอร์ไม่รองรับระบบเสียง','Your browser does not support speech.'],
+   ['ระบบนี้รองรับดีที่สุดบน Google Chrome หรือ Safari เวอร์ชันใหม่','Works best on a recent Google Chrome or Safari.'],['กำลังฟังเสียง... กรุณาพูดภาษาจีน','Listening... please speak Chinese.'],
+   ['คุณพูดว่า:','You said:'],['ความตรงกับประโยคต้นแบบ:','Match with the model sentence:'],['เยี่ยมมาก! (+10 XP)','Great! (+10 XP)'],['ลองฟังต้นแบบแล้วพูดใหม่อีกครั้งนะ','Listen to the model and try again.'],
+   ['ใช้ไมโครโฟนไม่ได้','Cannot use the microphone'],[') กรุณาอนุญาตการใช้ไมค์ และเปิดผ่าน Chrome',') please allow microphone access'],['กรุณากรอกประโยคภาษาจีน','Please enter a Chinese sentence'],
+   ['ส่งชุดนี้ไปแล้ว เลือก "ทำชุดนี้ใหม่" หรือชุดอื่นด้านบน','This set is already submitted. Choose "Retake this set" or another set above.'],['🎉 ผ่าน','🎉 Passed'],['❌ ยังไม่ผ่าน','❌ Not passed yet'],
+   ['ลองทบทวนแล้วทำใหม่','Review and try again'],['ผ่านครบ 3 ชุด! ปลดล็อก','All 3 sets passed! Unlocked'],[' แล้ว (+100 XP)',' (+100 XP)'],['ผ่านแล้ว','Passed'],
+   ['คำว่า','What does'],['แปลว่าอะไร?','mean?'],['พินอิน','Pinyin'],['ตรงกับความหมายใด?','matches which meaning?'],['ภาษาจีนคือคำใด?','is which Chinese word?'],['· สวัสดี ','· Hello '],['✓ บันทึกชื่อแล้ว','✓ Name saved'],
+   ['(กำลังเพิ่มประโยคตัวอย่างของคำนี้)','(example sentence coming soon)'],['ต้องการรีเซ็ตความก้าวหน้าทั้งหมดหรือไม่?','Reset all progress?'],['XP, ระดับ HSK, คำที่จำได้ และผลสอบจะถูกล้าง (ชื่อผู้เรียนยังอยู่) และย้อนกลับไม่ได้','XP, HSK level, learned words and exam results will be cleared (your name stays). This cannot be undone.'],
+   ['รีเซ็ตเรียบร้อย เริ่มเรียนใหม่ที่ HSK 1 ได้เลย','Reset complete. Start again from HSK 1.'],
+   ['การปฏิเสธ 有 ต้องใช้ 没有 (不有 ✗ → 没有 ✓)','To negate 有 use 没有 (不有 ✗ → 没有 ✓)'],['หน้าลักษณนามใช้ 两 ไม่ใช่ 二 (เช่น 两个)','Use 两, not 二, before measure words (e.g. 两个)'],
+   ['ไม่ต้องใช้ 是 นำหน้าคำคุณศัพท์ (我很高兴 ✓)','Do not put 是 before an adjective (我很高兴 ✓)'],['คำคุณศัพท์มักต้องมี 很 นำหน้า เช่น ','Adjectives usually need 很 before them, e.g. '],
+   ['คำถามแบบ "A不A" ไม่ต้องมี 吗 ท้ายประโยค','"A不A" questions do not take 吗 at the end'],['都 ต้องวางหลังประธาน เช่น ','都 must come after the subject, e.g. '],
+   ['เหตุการณ์ในอดีตใช้ 没 ปฏิเสธ (昨天我没去 ✓)','Use 没 to negate past events (昨天我没去 ✓)'],['มีตัวอักษรอังกฤษปนอยู่ ถ้าเป็นพินอินให้เปลี่ยนเป็นอักษรจีน','English letters found. If it is pinyin, switch to Chinese characters'],
+   ['ท้ายประโยคควรมีเครื่องหมาย 。 ！ หรือ ？','End the sentence with 。 ！ or ？'],['❌ ไม่พบตัวอักษรจีน กรุณาพิมพ์เป็นอักษรจีน (汉字)','❌ No Chinese characters found. Please type Chinese characters (汉字)'],
+   ['⚠️ จุดที่ควรแก้:','⚠️ Things to fix:'],['✅ ไม่พบข้อผิดพลาดตามกฎที่ตรวจได้','✅ No errors found by the rules checked'],['📖 คำศัพท์ที่พบ:','📖 Words found:'],
+   ['ℹ️ ตัวตรวจนี้ใช้กฎในเครื่อง ครอบคลุมข้อผิดพลาดที่พบบ่อยของผู้เริ่มเรียน อาจตรวจไม่ครบทุกกรณี','ℹ️ This checker uses built-in rules for common beginner mistakes and may miss some cases.'],
+   ['ปฏิเสธ 有 ใช้ 没有','Negate 有 with 没有'],['ไม่ต้องมี 是 นำหน้าคำคุณศัพท์','No 是 before an adjective'],['ก่อนลักษณนามใช้ 两','Use 两 before measure words'],['อดีตใช้ 没 ปฏิเสธ','Use 没 to negate the past'],['ไม่ต้องใช้ 吗 กับ A不A','No 吗 with A不A'],
+   ['ยังไม่มีประโยค ลองตรวจประโยคแรกของคุณ','No sentences yet. Try checking your first one.'],['เวอร์ชัน','Version'],['ภาษา / Language','Language'],['ใช้ฟอนต์ตัวอักษรขนาดนี้','Text size'],
+   ['ข้อมูลเก็บไว้ในเครื่องของคุณเท่านั้น','Your data is stored only on this device.'],['คำศัพท์ HSK 1–6 รวม 651 คำ','651 HSK 1–6 words']
+  ].sort((a, b) => b[0].length - a[0].length);
+  const SKIP = '#vocabMeaning,#vocabExTh,#shadowMeaning,#examBody label,.nt';
+  const TH = /[\u0E00-\u0E7F]/, ORIG = new WeakMap(); let lang = ls('hskLang') || 'th';
+  function tr(s) {
+    const k = s.trim(); if (EXACT[k]) return s.replace(k, EXACT[k]);
+    RX.forEach(r => { s = s.replace(r[0], r[1]); });
+    for (const p of P) if (s.indexOf(p[0]) > -1) s = s.split(p[0]).join(p[1]);
+    return s;
+  }
+  window.T = s => lang === 'en' ? tr(s) : s;
+  function node(n) {
+    if (lang !== 'en') return; const p = n.parentNode;
+    if (!p || /SCRIPT|STYLE/.test(p.nodeName) || (p.closest && p.closest(SKIP))) return;
+    const c = n.nodeValue; if (!TH.test(c)) return; const t = tr(c);
+    if (t !== c) { if (!ORIG.has(n)) ORIG.set(n, c); n.nodeValue = t; }
+  }
+  function walk(root) {
+    const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT); let n; while ((n = w.nextNode())) node(n);
+    if (root.querySelectorAll) root.querySelectorAll('[placeholder]').forEach(e => {
+      if (!e.dataset.th) e.dataset.th = e.placeholder; e.placeholder = lang === 'en' ? tr(e.dataset.th) : e.dataset.th;
+    });
+  }
+  new MutationObserver(ms => { if (lang !== 'en') return; ms.forEach(m => {
+    if (m.type === 'characterData') node(m.target); else m.addedNodes.forEach(a => { if (a.nodeType === 3) node(a); else if (a.nodeType === 1) walk(a); });
+  }); }).observe(document.body, { childList: true, subtree: true, characterData: true });
+  const _al = window.alert.bind(window), _cf = window.confirm.bind(window);
+  window.alert = m => _al(T(m)); window.confirm = m => _cf(T(m));
+  window.setLang = function (l) {
+    lang = l; ls('hskLang', l); document.documentElement.lang = l; document.documentElement.dataset.lang = l;
+    if (l === 'en') walk(document.body);
+    else { const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT); let n; while ((n = w.nextNode())) if (ORIG.has(n)) n.nodeValue = ORIG.get(n); walk(document.body); }
+    $('lgTh').classList.toggle('on', l === 'th'); $('lgEn').classList.toggle('on', l === 'en');
+  };
+  const FS = { s: '14px', m: '16px', l: '18.5px' };
+  window.setFs = function (k) {
+    ls('hskFs', k); document.documentElement.style.fontSize = FS[k];
+    document.querySelectorAll('[data-fs]').forEach(b => b.classList.toggle('on', b.dataset.fs === k));
+  };
+  window.toggleMenu = function (e) { e.stopPropagation(); $('menuPop').classList.toggle('open'); };
+  document.addEventListener('click', e => { if (!e.target.closest('#menuPop,#menuBtn')) $('menuPop').classList.remove('open'); });
+
+  /* กันจอซูมเองตอนแตะช่องพิมพ์ใน Safari (iPhone/iPad) แต่ยังถ่างสองนิ้วซูมได้ */
+  const vp = document.querySelector('meta[name=viewport]'), vpBase = vp.getAttribute('content');
+  document.addEventListener('focusin', e => { if (/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) vp.setAttribute('content', vpBase + ', maximum-scale=1'); });
+  document.addEventListener('focusout', () => { setTimeout(() => vp.setAttribute('content', vpBase), 300); });
+
+  /* รีเซ็ต: ล้างประวัติไวยากรณ์ด้วย */
+  window.resetProgress = function () {
+    if (!confirm('ต้องการรีเซ็ตความก้าวหน้าทั้งหมดหรือไม่?\nXP, ระดับ HSK, คำที่จำได้ และผลสอบจะถูกล้าง (ชื่อผู้เรียนยังอยู่) และย้อนกลับไม่ได้')) return;
+    app.xp = 0; app.hskLevel = 1; app.learned = {}; app.passed = {}; app.lastG = ''; app.gHist = [];
+    exam = { q: [], L: 0, s: 0, done: false }; saveApp();
+    $('hskSelector').value = 1; $('shadowLevel').value = 1;
+    $('examBody').innerHTML = ''; $('examPick').innerHTML = ''; $('examTitle').innerText = ''; $('examResult').style.display = 'none';
+    updateHeader(); loadVocabByLevel(); setShadowLevel(); renderHist();
+    alert('รีเซ็ตเรียบร้อย เริ่มเรียนใหม่ที่ HSK 1 ได้เลย');
+  };
+
+  /* ประวัติประโยคที่ตรวจ */
+  window.renderHist = function () {
+    const box = $('gHist'); box.textContent = '';
+    const h = app.gHist || [];
+    if (!h.length) { const p = document.createElement('p'); p.className = 'muted'; p.textContent = 'ยังไม่มีประโยค ลองตรวจประโยคแรกของคุณ'; box.appendChild(p); }
+    h.forEach(x => { const d = document.createElement('div'); d.className = 'hi';
+      const a = document.createElement('span'); a.className = 'zh'; a.textContent = x.t;
+      const b = document.createElement('b'); b.textContent = x.s + '/10'; d.appendChild(a); d.appendChild(b); box.appendChild(d); });
+    if (lang === 'en') walk(box);
+  };
+  const _g = checkGrammarWithAI;
+  checkGrammarWithAI = function () {
+    const t = $('userGrammarInput').value.trim(); _g();
+    if (!t || !/[\u4e00-\u9fff]/.test(t)) return;
+    const m = $('aiOutput').innerText.match(/(\d+)\/10/); if (!m) return;
+    app.gHist = [{ t: t, s: +m[1] }].concat((app.gHist || []).filter(x => x.t !== t)).slice(0, 5); saveApp(); renderHist();
+  };
+
+  setFs(ls('hskFs') || 'm'); renderHist();
+  document.documentElement.dataset.lang = lang; document.documentElement.lang = lang;
+  $('lgTh').classList.toggle('on', lang === 'th'); $('lgEn').classList.toggle('on', lang === 'en');
+  if (lang === 'en') walk(document.body);
+})();
+</script>
+
 </body>
 </html>
