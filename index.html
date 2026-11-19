@@ -4,12 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>HSK1-6 Ultimate Learning System</title>
-  <link rel="apple-touch-icon" href="logo.png?v=3">
-  <link rel="icon" type="image/png" href="logo.png?v=3">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="HSK Master">
-  <meta name="theme-color" content="#2b2d42">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans+Thai:wght@400;600&family=Noto+Sans+SC:wght@500;700&display=swap">
   <style>
     :root {
@@ -284,6 +278,25 @@
   .hi{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid #e6dccb}.hi:last-child{border:0}.hi b{color:var(--red)}
   .muted{color:var(--muted);margin:0}
 </style>
+<style id="theme5">
+  .srsbar{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 6px}
+  .chipbtn{border:1.5px solid #d9cfbd;background:#fffdf8;border-radius:999px;padding:8px 14px;font:inherit;font-size:.85rem;color:var(--ink)}
+  .chipbtn.on{background:var(--red);border-color:var(--red);color:#fff}
+  .shseg{max-width:220px;margin:0 0 12px}
+  .fillq{font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:1.5rem;font-weight:500;line-height:1.5;margin:8px 0}
+  .opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0 4px}
+  .opt{border:1.5px solid #d9cfbd;background:#fffdf8;border-radius:16px;padding:12px;font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:1.3rem;color:var(--ink)}
+  .opt.ok{background:#dff3e8;border-color:#2f8f6b}.opt.no{background:#fbe0da;border-color:#c9371f}
+  .taskw{font-size:1.3rem;font-weight:600;margin:6px 0}
+  details.mkd{margin-top:16px}details.mkd summary{font-family:'DM Serif Display','Noto Sans Thai',sans-serif;font-size:1.15rem;cursor:pointer;padding:6px 4px}
+</style>
+<style id="theme6">
+  .brand{align-items:flex-start;margin-left:50px}
+  .logo{font-size:2rem;line-height:1;margin-top:-3px}
+  .app{line-height:1.1}
+  .menu-btn{top:13px;left:20px;width:40px;height:40px}
+  .menu-pop{top:62px;left:14px}
+</style>
 </head>
 <body>
 
@@ -296,13 +309,13 @@
     <div class="mp-l">ขนาดตัวอักษร</div>
     <div class="seg"><button data-fs="s" onclick="setFs('s')">เล็ก</button><button data-fs="m" onclick="setFs('m')">กลาง</button><button data-fs="l" onclick="setFs('l')">ใหญ่</button></div>
     <div class="mp-l">เกี่ยวกับแอป</div>
-    <div class="mp-a">HSK Master · เวอร์ชัน 1.1<br>คำศัพท์ HSK 1–6 รวม 651 คำ<br>ข้อมูลเก็บไว้ในเครื่องของคุณเท่านั้น</div>
+    <div class="mp-a">Nihao HSK · เวอร์ชัน 1.1<br>คำศัพท์ HSK 1–6 รวม 651 คำ<br>ข้อมูลเก็บไว้ในเครื่องของคุณเท่านั้น</div>
   </div>
   
   <header class="hero">
     <svg class="mist" viewBox="0 0 400 140" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="70" cy="175" r="95" fill="#e6dfd0"/><circle cx="195" cy="190" r="105" fill="#ece6d8"/><circle cx="335" cy="175" r="98" fill="#e3dbca"/><rect y="122" width="400" height="18" fill="#f4eee2" opacity=".85"/></svg><svg class="art on" data-s="dashboardTab" viewBox="0 0 200 140" preserveAspectRatio="xMaxYMax meet" aria-hidden="true"><circle cx="130" cy="64" r="44" fill="#e9e2d3"/><rect x="116" y="104" width="28" height="22" fill="#b9b7b0"/><polygon points="96,104 164,104 150,92 110,92" fill="#e8472f"/><rect x="118" y="80" width="24" height="12" fill="#b9b7b0"/><polygon points="104,80 156,80 146,70 114,70" fill="#e8472f"/><rect x="121" y="61" width="18" height="9" fill="#b9b7b0"/><polygon points="110,61 150,61 142,52 118,52" fill="#e8472f"/><rect x="124" y="45" width="12" height="7" fill="#b9b7b0"/><polygon points="116,45 144,45 130,34" fill="#e8472f"/><rect x="129" y="20" width="2" height="14" fill="#6b6e72"/><rect x="60" y="126" width="140" height="3" fill="#c9c4ba"/></svg><svg class="art" data-s="srsTab" viewBox="16 0 200 140" preserveAspectRatio="xMaxYMax meet" aria-hidden="true"><line x1="100" y1="0" x2="100" y2="0" stroke="#9a9da0" stroke-width="1.5"/><rect x="92.5" y="0" width="15" height="5" rx="1" fill="#6b6e72"/><ellipse cx="100" cy="19" rx="15" ry="14" fill="#e8472f"/><path d="M88.0 11.3H112.0M85 19H115M88.0 26.7H112.0" stroke="#f8f3e9" stroke-width="1.6" opacity=".7"/><rect x="92.5" y="33" width="15" height="5" rx="1" fill="#6b6e72"/><line x1="100" y1="38" x2="100" y2="54" stroke="#e8472f" stroke-width="2.5"/><line x1="142" y1="0" x2="142" y2="8" stroke="#9a9da0" stroke-width="1.5"/><rect x="131.5" y="8" width="21" height="5" rx="1" fill="#6b6e72"/><ellipse cx="142" cy="33" rx="21" ry="20" fill="#e8472f"/><path d="M125.2 22.0H158.8M121 33H163M125.2 44.0H158.8" stroke="#f8f3e9" stroke-width="1.6" opacity=".7"/><rect x="131.5" y="53" width="21" height="5" rx="1" fill="#6b6e72"/><line x1="142" y1="58" x2="142" y2="74" stroke="#e8472f" stroke-width="2.5"/><line x1="186" y1="0" x2="186" y2="0" stroke="#9a9da0" stroke-width="1.5"/><rect x="178.5" y="0" width="15" height="5" rx="1" fill="#6b6e72"/><ellipse cx="186" cy="19" rx="15" ry="14" fill="#e8472f"/><path d="M174.0 11.3H198.0M171 19H201M174.0 26.7H198.0" stroke="#f8f3e9" stroke-width="1.6" opacity=".7"/><rect x="178.5" y="33" width="15" height="5" rx="1" fill="#6b6e72"/><line x1="186" y1="38" x2="186" y2="54" stroke="#e8472f" stroke-width="2.5"/><rect x="60" y="126" width="140" height="3" fill="#c9c4ba"/></svg><svg class="art" data-s="shadowingTab" viewBox="34 0 200 140" preserveAspectRatio="xMaxYMax meet" aria-hidden="true"><path d="M140 128 L60.3 61.2 A104 104 0 0 1 219.7 61.2 Z" fill="#f1ebdd" stroke="#9a9da0" stroke-width="1.5"/><line x1="140" y1="128" x2="206.8" y2="48.3" stroke="#c9c4ba" stroke-width="1.2"/><line x1="140" y1="128" x2="192.0" y2="37.9" stroke="#c9c4ba" stroke-width="1.2"/><line x1="140" y1="128" x2="175.6" y2="30.3" stroke="#c9c4ba" stroke-width="1.2"/><line x1="140" y1="128" x2="158.1" y2="25.6" stroke="#c9c4ba" stroke-width="1.2"/><line x1="140" y1="128" x2="140.0" y2="24.0" stroke="#c9c4ba" stroke-width="1.2"/><line x1="140" y1="128" x2="121.9" y2="25.6" stroke="#c9c4ba" stroke-width="1.2"/><line x1="140" y1="128" x2="104.4" y2="30.3" stroke="#c9c4ba" stroke-width="1.2"/><line x1="140" y1="128" x2="88.0" y2="37.9" stroke="#c9c4ba" stroke-width="1.2"/><line x1="140" y1="128" x2="73.2" y2="48.3" stroke="#c9c4ba" stroke-width="1.2"/><path d="M140 128 L95.6 90.7 A58 58 0 0 1 184.4 90.7 Z" fill="#e8472f"/><circle cx="140" cy="128" r="6" fill="#6b6e72"/><rect x="60" y="126" width="140" height="3" fill="#c9c4ba"/></svg><svg class="art" data-s="aiTutorTab" viewBox="16 0 200 140" preserveAspectRatio="xMaxYMax meet" aria-hidden="true"><circle cx="150" cy="62" r="42" fill="#e9e2d3"/><g transform="translate(140 58) rotate(-12) scale(1.15)"><polygon points="-22,0 -44,-14 -44,14" fill="#e8472f" opacity=".85"/><ellipse cx="0" cy="0" rx="28" ry="13" fill="#e8472f"/><ellipse cx="-4" cy="-2" rx="10" ry="5" fill="#f8f3e9" opacity=".9"/><polygon points="-2,10 10,22 12,8" fill="#e8472f" opacity=".8"/><circle cx="19" cy="-3" r="2.2" fill="#1c1a17"/></g><g transform="translate(176 100) rotate(172) scale(0.8)"><polygon points="-22,0 -44,-14 -44,14" fill="#6b6e72" opacity=".85"/><ellipse cx="0" cy="0" rx="28" ry="13" fill="#6b6e72"/><ellipse cx="-4" cy="-2" rx="10" ry="5" fill="#f8f3e9" opacity=".9"/><polygon points="-2,10 10,22 12,8" fill="#6b6e72" opacity=".8"/><circle cx="19" cy="-3" r="2.2" fill="#1c1a17"/></g><path d="M80 112q10-8 20 0t20 0t20 0M150 124q10-8 20 0t20 0" stroke="#9a9da0" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="60" y="126" width="140" height="3" fill="#c9c4ba"/></svg><svg class="art" data-s="examTab" viewBox="0 0 200 140" preserveAspectRatio="xMaxYMax meet" aria-hidden="true"><circle cx="130" cy="68" r="36" fill="none" stroke="#e8472f" stroke-width="8" stroke-dasharray="190 36" transform="rotate(-70 130 68)" stroke-linecap="round"/><g transform="translate(148 74) rotate(38)"><rect x="-4" y="-62" width="8" height="58" rx="4" fill="#b9b7b0"/><rect x="-5.5" y="-4" width="11" height="9" rx="1" fill="#6b6e72"/><path d="M-5.5 5H5.5L2 32Q0 36-2 32Z" fill="#1c1a17"/></g><rect x="70" y="124" width="110" height="3" rx="1.5" fill="#c9c4ba"/><rect x="60" y="126" width="140" height="3" fill="#c9c4ba"/></svg>
-    <div class="brand"><span class="logo">字</span><div><div class="app">HSK Master</div><div class="sub" id="hello"></div></div></div>
-    <div class="hchips"><span>ระดับ <strong id="currentHskLevel">HSK 1</strong></span><span>XP <strong id="userXp">0</strong></span></div>
+    <div class="brand"><span class="logo">字</span><div><div class="app">Nihao HSK</div><div class="sub" id="hello"></div></div></div>
+    <div class="hchips"><span>ระดับ <strong id="currentHskLevel">HSK 1</strong></span><span>XP <strong id="userXp">0</strong></span><span id="stStreak">🔥 0 วัน</span></div>
   </header>
 
   <nav id="navTabs">
@@ -353,9 +366,11 @@
       <option value="5">HSK 5</option>
       <option value="6">HSK 6 (ศัพท์ชั้นสูง)</option>
     </select>
+    <div class="srsbar"><button class="chipbtn" onclick="srsShuffle()">🔀 สุ่มคำ</button><button class="chipbtn" onclick="loadVocabByLevel()">📚 ตามระดับ</button><button class="chipbtn" id="hardBtn" onclick="srsHard()">⚠️ คำที่ยาก (0)</button><button class="chipbtn" id="flipBtn" onclick="toggleFlip()">🃏 โหมดพลิกการ์ด</button></div>
+    <div id="srsInfo" class="muted" style="font-size:.82rem;margin-bottom:8px"></div>
 
     <div class="card-box">
-      <div class="hanzi" id="vocabHanzi">爱</div>
+      <div class="hanzi" id="vocabHanzi" onclick="reveal()">爱</div>
       <div class="pinyin" id="vocabPinyin">ài</div>
       <div class="meaning" id="vocabMeaning">รัก / ชอบ</div>
 
@@ -370,7 +385,8 @@
       <button class="btn btn-secondary" onclick="speakText(document.getElementById('vocabHanzi').innerText)">🔊 ฟังออกเสียงคำศัพท์</button>
       <button class="btn btn-secondary" onclick="speakText(document.getElementById('vocabExZh').innerText)">🔊 ฟังเสียงประโยค</button>
       <br><br>
-      <p>ประเมินระดับความจำ (SRS Rating):</p>
+      <div style="text-align:center;margin:10px 0"><button id="revealBtn" class="pbtn" style="display:none" onclick="reveal()">👁️ เฉลย</button></div>
+    <p>ประเมินระดับความจำ (SRS Rating):</p>
       <button class="btn" style="background:#e74c3c;" onclick="handleSrsRating('again')">จำไม่ได้เลย (Again)</button>
       <button class="btn" style="background:#f39c12;" onclick="handleSrsRating('hard')">ค่อนข้างยาก (Hard)</button>
       <button class="btn" style="background:#27ae60;" onclick="handleSrsRating('good')">จำได้แม่น (Good)</button>
@@ -384,6 +400,7 @@
       <option value="1">HSK 1</option><option value="2">HSK 2</option><option value="3">HSK 3</option>
       <option value="4">HSK 4</option><option value="5">HSK 5</option><option value="6">HSK 6</option>
     </select>
+    <div class="seg shseg"><button id="shS" class="on" onclick="setShMode('sent')">ประโยค</button><button id="shW" onclick="setShMode('word')">คำ</button></div>
     <div class="card-box">
       <p class="hanzi" style="font-size:1.8rem;" id="shadowText">虽然汉语很难，但我一定要坚持学下去。</p>
       <p class="pinyin" id="shadowPinyin">Suīrán hànyǔ hěn nán, dàn wǒ yīdìng yào jiānchí xué xiàqù.</p>
@@ -393,7 +410,9 @@
     <div style="text-align: center;">
       <button class="btn btn-secondary" onclick="speakText(document.getElementById('shadowText').innerText)">🔊 ฟังเสียงต้นแบบ</button>
       <button class="btn btn-success" onclick="startSpeechRecognition()">🎙️ เริ่มพูดบันทึกเสียง</button>
-      <button class="btn" onclick="nextSentence()">➡️ ประโยคถัดไป</button>
+      <button class="btn" id="shNext" onclick="nextSentence()">➡️ ประโยคถัดไป</button>
+      <button class="btn" id="shShuf" onclick="shufShadow()">🔀 สุ่ม</button>
+      <button class="btn" id="shHide" onclick="toggleHide()" style="display:none">👁️ ซ่อนความหมาย</button>
       <div id="speechOutput" class="output-box">กดปุ่มเริ่มพูด แล้วลองพูดตามประโยคด้านบน...</div>
     </div>
   </div>
@@ -406,14 +425,26 @@
     <button class="btn" onclick="checkGrammarWithAI()">✅ ตรวจประโยค</button>
     
     <div id="aiOutput" class="output-box">ผลการวิเคราะห์ไวยากรณ์จะปรากฏที่นี่...</div>
-    <h3 class="sec">ข้อผิดพลาดที่พบบ่อย</h3>
+    <h3 class="sec">แบบฝึกเติมคำในช่องว่าง</h3>
+    <div class="card2"><small class="muted">เลือกคำที่เติมลงในช่องว่าง</small>
+      <div id="fillQ" class="fillq"></div><div id="fillHint" class="muted nt" style="font-size:.88rem"></div>
+      <div id="fillOpts" class="opts"></div><div id="fillFb" style="min-height:1.4em;margin:6px 0;font-weight:600;white-space:pre-line"></div>
+      <button class="pbtn" onclick="newFill()">➡️ ข้อถัดไป</button></div>
+    <h3 class="sec">โจทย์ท้าแต่งประโยค</h3>
+    <div class="card2"><small class="muted">แต่งประโยคโดยใช้คำว่า</small>
+      <div id="taskW" class="taskw nt"></div>
+      <input type="text" id="taskIn" placeholder="พิมพ์ประโยคของคุณ...">
+      <button class="pbtn" onclick="checkTask()">✅ ตรวจโจทย์</button> <button class="pbtn ghost" onclick="newTask()">🔄 โจทย์ใหม่</button>
+      <div id="taskFb" style="margin-top:10px;font-weight:600;white-space:pre-line"></div></div>
+    <h3 class="sec">ประโยคที่ตรวจล่าสุด</h3>
+    <div id="gHist" class="card2"></div>
+    <details class="mkd"><summary>ข้อผิดพลาดที่พบบ่อย</summary>
     <div class="mk"><div><span class="bad">我不有钱</span> → <span class="good">我没有钱</span></div><small>ปฏิเสธ 有 ใช้ 没有</small></div>
     <div class="mk"><div><span class="bad">我是很高兴</span> → <span class="good">我很高兴</span></div><small>ไม่ต้องมี 是 นำหน้าคำคุณศัพท์</small></div>
     <div class="mk"><div><span class="bad">我二个朋友</span> → <span class="good">我有两个朋友</span></div><small>ก่อนลักษณนามใช้ 两</small></div>
     <div class="mk"><div><span class="bad">昨天我不去</span> → <span class="good">昨天我没去</span></div><small>อดีตใช้ 没 ปฏิเสธ</small></div>
     <div class="mk"><div><span class="bad">你有没有钱吗？</span> → <span class="good">你有没有钱？</span></div><small>ไม่ต้องใช้ 吗 กับ A不A</small></div>
-    <h3 class="sec">ประโยคที่ตรวจล่าสุด</h3>
-    <div id="gHist" class="card2"></div>
+    </details>
   </div>
 
   <!-- TAB 5: EXAM -->
@@ -916,7 +947,7 @@
     return Array.from({ length: 10 }, (_, i) => {
       const w = list[((s * 10 + i) * step) % n], type = (i + s) % 3;
       const key = x => type === 2 ? x.h : x.m;
-      const wrong = shuffle(list.concat(all)).filter(x => key(x) !== key(w)).map(key);
+      const wrong = shuffle(list.concat(all)).filter(x => key(x) !== key(w) && !(document.documentElement.lang === 'en' && w.mEn && !x.mEn)).map(key);
       const opts = shuffle([key(w), ...[...new Set(wrong)].slice(0, 3)]);
       const q = type === 0 ? `คำว่า <b>${w.h}</b> แปลว่าอะไร?`
         : type === 1 ? `พินอิน <b>${w.p}</b> ตรงกับความหมายใด?`
@@ -1090,8 +1121,8 @@
   const ls = (k, v) => { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) {} };
   const EXACT = {'หน้าหลัก':'Home','ทบทวน':'Review','พูดตาม':'Speak','ไวยากรณ์':'Grammar','สอบ':'Exam','ระดับ':'Level','ผู้เรียน':'Learner','จำได้แล้ว':'Learned',
     '⭐ XP รวม':'⭐ Total XP','📖 คำที่จำได้':'📖 Words learned','🏅 ชุดสอบที่ผ่าน':'🏅 Sets passed','เมนู':'Menu','ขนาดตัวอักษร':'Text size','เล็ก':'Small','กลาง':'Medium','ใหญ่':'Large',
-    'เกี่ยวกับแอป':'About','เวอร์ชัน':'Version','ข้อผิดพลาดที่พบบ่อย':'Common mistakes','ประโยคที่ตรวจล่าสุด':'Recent sentences','ผิด':'Wrong','ถูก':'Right'};
-  const RX = [[/จำได้แล้ว (\d+)\/(\d+) คำ/g,'Learned $1/$2 words'],[/ข้อ (\d+):/g,'Q$1:'],[/(\d)\/3 ชุด/g,'$1/3 sets'],[/คะแนน: /g,'Score: '],[/ชุดที่ /g,'Set ']];
+    'เกี่ยวกับแอป':'About','เวอร์ชัน':'Version','ข้อผิดพลาดที่พบบ่อย':'Common mistakes','ประโยคที่ตรวจล่าสุด':'Recent sentences','ผิด':'Wrong','ถูก':'Right','ประโยค':'Sentences','คำ':'Words'};
+  const RX = [[/จำได้แล้ว (\d+)\/(\d+) คำ/g,'Learned $1/$2 words'],[/ข้อ (\d+):/g,'Q$1:'],[/(\d)\/3 ชุด/g,'$1/3 sets'],[/คะแนน: /g,'Score: '],[/ชุดที่ /g,'Set '],[/เหลือ (\d+) คำ/g,'$1 left'],[/🔥 (\d+) วัน/g,'🔥 $1 days']];
   const P = [
    ['ระดับที่กำลังเรียน','Current level'],['เส้นทาง HSK 1–6','HSK 1–6 path'],['ชื่อผู้เรียน','Learner name'],['พิมพ์ชื่อของคุณที่นี่...','Type your name here...'],['บันทึกชื่อ','Save name'],
    ['🗑️ รีเซ็ตความก้าวหน้า','🗑️ Reset progress'],['รีเซ็ตความก้าวหน้า','Reset progress'],
@@ -1121,8 +1152,14 @@
    ['ℹ️ ตัวตรวจนี้ใช้กฎในเครื่อง ครอบคลุมข้อผิดพลาดที่พบบ่อยของผู้เริ่มเรียน อาจตรวจไม่ครบทุกกรณี','ℹ️ This checker uses built-in rules for common beginner mistakes and may miss some cases.'],
    ['ปฏิเสธ 有 ใช้ 没有','Negate 有 with 没有'],['ไม่ต้องมี 是 นำหน้าคำคุณศัพท์','No 是 before an adjective'],['ก่อนลักษณนามใช้ 两','Use 两 before measure words'],['อดีตใช้ 没 ปฏิเสธ','Use 没 to negate the past'],['ไม่ต้องใช้ 吗 กับ A不A','No 吗 with A不A'],
    ['ยังไม่มีประโยค ลองตรวจประโยคแรกของคุณ','No sentences yet. Try checking your first one.'],['เวอร์ชัน','Version'],['ภาษา / Language','Language'],['ใช้ฟอนต์ตัวอักษรขนาดนี้','Text size'],
-   ['ข้อมูลเก็บไว้ในเครื่องของคุณเท่านั้น','Your data is stored only on this device.'],['คำศัพท์ HSK 1–6 รวม 651 คำ','651 HSK 1–6 words']
-  ].sort((a, b) => b[0].length - a[0].length);
+   ['ข้อมูลเก็บไว้ในเครื่องของคุณเท่านั้น','Your data is stored only on this device.'],['คำศัพท์ HSK 1–6 รวม 651 คำ','651 HSK 1–6 words'],
+['🔀 สุ่มคำ','🔀 Shuffle words'],['📚 ตามระดับ','📚 By level'],['⚠️ คำที่ยาก','⚠️ Hard words'],['🃏 โหมดพลิกการ์ด','🃏 Flip-card mode'],['👁️ เฉลย','👁️ Reveal'],
+   ['โหมด: ตามระดับ HSK ','Mode: by level HSK '],['โหมด: สุ่มจากทุกระดับที่ปลดล็อก','Mode: shuffled from all unlocked levels'],['โหมด: ทบทวนคำที่ยาก','Mode: hard words'],[' · คำนี้ HSK',' · this word HSK'],['ยังไม่มีคำที่ยาก','No hard words yet'],
+   ['🔀 สุ่ม','🔀 Shuffle'],['👁️ ซ่อนความหมาย','👁️ Hide meaning'],['👁️ แสดงความหมาย','👁️ Show meaning'],['➡️ คำถัดไป','➡️ Next word'],['เยี่ยมมาก! (+5 XP)','Great! (+5 XP)'],
+   ['แบบฝึกเติมคำในช่องว่าง','Fill in the blank'],['เลือกคำที่เติมลงในช่องว่าง','Choose the word that fills the blank'],['✅ ถูกต้อง! (+5 XP)','✅ Correct! (+5 XP)'],['❌ คำตอบที่ถูกคือ','❌ The answer is'],['➡️ ข้อถัดไป','➡️ Next'],
+   ['โจทย์ท้าแต่งประโยค','Sentence challenge'],['แต่งประโยคโดยใช้คำว่า','Write a sentence using'],['พิมพ์ประโยคของคุณ...','Type your sentence...'],['✅ ตรวจโจทย์','✅ Check'],['🔄 โจทย์ใหม่','🔄 New challenge'],
+   ['✅ ผ่าน! ประโยคใช้คำนี้ถูกต้อง (+15 XP)','✅ Passed! Well used (+15 XP)'],['❌ ประโยคต้องมีคำว่า','❌ The sentence must contain'],['⚠️ ประโยคมีคำนี้แล้ว แต่ยังมีจุดที่ควรแก้:','⚠️ It contains the word, but check these points:'],['• ประโยคสั้นเกินไป','• The sentence is too short'],
+   ].sort((a, b) => b[0].length - a[0].length);
   const SKIP = '#vocabMeaning,#vocabExTh,#shadowMeaning,#examBody label,.nt';
   const TH = /[\u0E00-\u0E7F]/, ORIG = new WeakMap(); let lang = ls('hskLang') || 'th';
   function tr(s) {
@@ -1204,5 +1241,168 @@
 })();
 </script>
 
+<script>
+/* ===== รอบนี้: สุ่มคำ/คำที่ยาก/พลิกการ์ด, พูดตามทีละคำ, แบบฝึกไวยากรณ์, streak ===== */
+(function () {
+  vocab && Object.keys(vocab).forEach(L => vocab[L].forEach(w => { w.lv = +L; }));
+  const pick = a => a[Math.floor(Math.random() * a.length)];
+  const unlocked = () => { const a = []; for (let L = 1; L <= app.hskLevel; L++) vocab[L].forEach(w => a.push(w)); return a; };
+  const isDone = w => (app.learned[w.lv] || []).includes(w.h);
+
+  /* ---- streak ---- */
+  const dstr = d => d.toLocaleDateString('en-CA');
+  function streakNow() {
+    const s = app.streak; if (!s) return 0;
+    const t = new Date(), y = new Date(); y.setDate(t.getDate() - 1);
+    return (s.last === dstr(t) || s.last === dstr(y)) ? s.n : 0;
+  }
+  function markStudy() {
+    const t = dstr(new Date()), y = new Date(); y.setDate(y.getDate() - 1);
+    const s = app.streak || { last: '', n: 0 }; if (s.last === t) return;
+    s.n = s.last === dstr(y) ? s.n + 1 : 1; s.last = t; app.streak = s; saveApp();
+  }
+  const _ax = addXP; addXP = function (n) { _ax(n); markStudy(); updateHeader(); };
+  const _uh = updateHeader; updateHeader = function () { _uh(); $('stStreak').textContent = '🔥 ' + streakNow() + ' วัน'; };
+
+  /* ---- SRS: สุ่ม / ตามระดับ / คำที่ยาก / พลิกการ์ด ---- */
+  let mode = 'level', shown = true;
+  const info = () => {
+    const m = mode === 'level' ? 'โหมด: ตามระดับ HSK ' + $('hskSelector').value : mode === 'all' ? 'โหมด: สุ่มจากทุกระดับที่ปลดล็อก' : 'โหมด: ทบทวนคำที่ยาก';
+    $('srsInfo').textContent = m + ' · เหลือ ' + queue.length + ' คำ' + (queue[0] && mode !== 'level' ? ' · คำนี้ HSK ' + queue[0].lv : '');
+    $('hardBtn').textContent = '⚠️ คำที่ยาก (' + Object.keys(app.hard || {}).length + ')';
+    $('flipBtn').classList.toggle('on', !!app.flip);
+  };
+  loadVocabByLevel = function () {
+    mode = 'level'; const L = $('hskSelector').value, done = app.learned[L] || [];
+    queue = vocab[L].filter(w => !done.includes(w.h)); showCard();
+  };
+  srsShuffle = function () { mode = 'all'; queue = shuffle(unlocked().filter(w => !isDone(w))); showCard(); };
+  srsHard = function () {
+    const ks = Object.keys(app.hard || {}), all = unlocked().concat([].concat(...Object.values(vocab)));
+    const ws = ks.map(k => { const [l, h] = k.split(':'); return vocab[l].find(w => w.h === h); }).filter(Boolean);
+    if (!ws.length) return alert('ยังไม่มีคำที่ยาก'); mode = 'hard'; queue = shuffle(ws); showCard();
+  };
+  toggleFlip = function () { app.flip = !app.flip; saveApp(); showCard(); };
+  reveal = function () { shown = true; ['vocabPinyin', 'vocabMeaning', 'exampleBox'].forEach(i => { $(i).style.visibility = 'visible'; }); $('revealBtn').style.display = 'none'; };
+  showCard = function () {
+    const w = queue[0];
+    if (!w) {
+      $('vocabHanzi').innerText = '🎉'; $('vocabPinyin').innerText = '';
+      $('vocabMeaning').innerText = 'จำคำศัพท์ระดับนี้ครบแล้ว! ไปสอบเลื่อนระดับได้เลย'; $('exampleBox').style.display = 'none';
+      $('revealBtn').style.display = 'none'; info(); return;
+    }
+    $('exampleBox').style.display = 'block';
+    $('vocabHanzi').innerText = w.h; $('vocabPinyin').innerText = w.p; $('vocabMeaning').innerText = w.m;
+    $('vocabExZh').innerText = w.exZh || '(กำลังเพิ่มประโยคตัวอย่างของคำนี้)'; $('vocabExPy').innerText = w.exPy; $('vocabExTh').innerText = w.exTh;
+    const hide = !!app.flip; ['vocabPinyin', 'vocabMeaning', 'exampleBox'].forEach(i => { $(i).style.visibility = hide ? 'hidden' : 'visible'; });
+    $('revealBtn').style.display = hide ? 'inline-block' : 'none'; info();
+  };
+  handleSrsRating = function (r) {
+    if (!queue.length) return; const w = queue.shift(), k = w.lv + ':' + w.h; app.hard = app.hard || {};
+    if (r === 'good') { (app.learned[w.lv] = app.learned[w.lv] || []); if (!app.learned[w.lv].includes(w.h)) app.learned[w.lv].push(w.h); delete app.hard[k]; addXP(5); }
+    else { app.hard[k] = 1; queue.splice(Math.min(r === 'again' ? 3 : 8, queue.length), 0, w); addXP(1); }
+    saveApp(); updateHeader(); showCard();
+  };
+
+  /* ---- พูดตาม: โหมดประโยค / คำ ---- */
+  let shMode = 'sent';
+  const hideM = () => !!app.wHide && shMode === 'word';
+  showShadow = function () {
+    $('shadowText').innerText = SENT[sIdx][0]; $('shadowPinyin').innerText = SENT[sIdx][1]; $('shadowMeaning').innerText = SENT[sIdx][2];
+    $('shadowMeaning').style.visibility = hideM() ? 'hidden' : 'visible';
+    $('speechOutput').innerText = 'กดปุ่มเริ่มพูด แล้วลองพูดตามประโยคด้านบน...';
+    $('shHide').style.display = shMode === 'word' ? 'inline-block' : 'none';
+    $('shHide').textContent = app.wHide ? '👁️ แสดงความหมาย' : '👁️ ซ่อนความหมาย';
+    $('shNext').textContent = shMode === 'word' ? '➡️ คำถัดไป' : '➡️ ประโยคถัดไป';
+    $('shS').classList.toggle('on', shMode === 'sent'); $('shW').classList.toggle('on', shMode === 'word');
+  };
+  setShadowLevel = function () {
+    const L = $('shadowLevel').value;
+    SENT.splice(0, SENT.length, ...(shMode === 'word' ? shuffle(vocab[L]).map(w => [w.h, w.p, w.m]) : SH[L])); sIdx = 0; showShadow();
+  };
+  setShMode = function (m) { shMode = m; setShadowLevel(); };
+  shufShadow = function () {
+    if (shMode === 'word') return setShadowLevel();
+    let j; do { j = Math.floor(Math.random() * SENT.length); } while (j === sIdx && SENT.length > 1); sIdx = j; showShadow();
+  };
+  toggleHide = function () { app.wHide = !app.wHide; saveApp(); showShadow(); };
+  startSpeechRecognition = function () {
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SR) return alert('ระบบนี้รองรับดีที่สุดบน Google Chrome หรือ Safari เวอร์ชันใหม่');
+    const clean = s => s.replace(/[，。？！、,.?! ]/g, ''), target = clean(SENT[sIdx][0]), out = $('speechOutput'), word = shMode === 'word';
+    const need = word ? 50 : 60, xp = word ? 5 : 10, r = new SR(); r.lang = 'zh-CN'; out.innerText = 'กำลังฟังเสียง... กรุณาพูดภาษาจีน';
+    r.onresult = e => {
+      const t = clean(e.results[0][0].transcript); let hit = 0; for (const c of target) if (t.includes(c)) hit++;
+      const sc = Math.round(hit / target.length * 100);
+      out.innerText = `คุณพูดว่า: ${t}\nความตรงกับประโยคต้นแบบ: ${sc}%` + (sc >= need ? `\nเยี่ยมมาก! (+${xp} XP)` : '\nลองฟังต้นแบบแล้วพูดใหม่อีกครั้งนะ');
+      if (sc >= need) addXP(xp);
+    };
+    r.onerror = e => { out.innerText = 'ใช้ไมโครโฟนไม่ได้ (' + e.error + ') กรุณาอนุญาตการใช้ไมค์ และเปิดผ่าน Chrome'; };
+    r.start();
+  };
+
+  /* ---- ไวยากรณ์: เติมคำ + โจทย์แต่งประโยค ---- */
+  let fill = null, task = null;
+  newFill = function () {
+    const w = pick(unlocked().filter(x => x.exZh && x.exZh.split(x.h).length === 2));
+    const same = vocab[w.lv].filter(x => x.h !== w.h && !w.exZh.includes(x.h));
+    fill = { w, opts: shuffle([w.h, ...shuffle(same).slice(0, 3).map(x => x.h)]), done: false };
+    $('fillQ').textContent = w.exZh.replace(w.h, '＿＿'); $('fillHint').textContent = w.exTh; $('fillFb').textContent = '';
+    $('fillOpts').innerHTML = fill.opts.map((o, i) => `<button class="opt" onclick="pickFill(${i})">${o}</button>`).join('');
+  };
+  pickFill = function (i) {
+    if (fill.done) return; fill.done = true; const ok = fill.opts[i] === fill.w.h, bs = $('fillOpts').children;
+    for (let k = 0; k < bs.length; k++) { if (fill.opts[k] === fill.w.h) bs[k].classList.add('ok'); }
+    if (!ok) bs[i].classList.add('no');
+    $('fillQ').textContent = fill.w.exZh; $('fillFb').textContent = ok ? '✅ ถูกต้อง! (+5 XP)' : '❌ คำตอบที่ถูกคือ ' + fill.w.h + ' (' + fill.w.p + ')';
+    if (ok) addXP(5);
+  };
+  newTask = function () {
+    const done = unlocked().filter(isDone); task = { w: pick(done.length ? done : unlocked()), done: false };
+    $('taskW').textContent = task.w.h + ' (' + task.w.p + ') = ' + task.w.m; $('taskIn').value = ''; $('taskFb').textContent = '';
+  };
+  checkTask = function () {
+    const t = $('taskIn').value.trim(), fb = $('taskFb');
+    if (!t) return alert('กรุณากรอกประโยคภาษาจีน');
+    if (!t.includes(task.w.h)) { fb.textContent = '❌ ประโยคต้องมีคำว่า ' + task.w.h; return; }
+    const bad = RULES.filter(r => r[0].test(t));
+    if (bad.length || t.length < 4) { fb.textContent = '⚠️ ประโยคมีคำนี้แล้ว แต่ยังมีจุดที่ควรแก้:\n' + (bad.map(r => '• ' + r[1]).join('\n') || '• ประโยคสั้นเกินไป'); return; }
+    fb.textContent = '✅ ผ่าน! ประโยคใช้คำนี้ถูกต้อง (+15 XP)'; if (!task.done) { task.done = true; addXP(15); }
+  };
+
+  /* ---- รีเซ็ต ---- */
+  resetProgress = function () {
+    if (!confirm('ต้องการรีเซ็ตความก้าวหน้าทั้งหมดหรือไม่?\nXP, ระดับ HSK, คำที่จำได้ และผลสอบจะถูกล้าง (ชื่อผู้เรียนยังอยู่) และย้อนกลับไม่ได้')) return;
+    app.xp = 0; app.hskLevel = 1; app.learned = {}; app.passed = {}; app.lastG = ''; app.gHist = []; app.hard = {}; app.streak = null;
+    exam = { q: [], L: 0, s: 0, done: false }; saveApp();
+    $('hskSelector').value = 1; $('shadowLevel').value = 1; $('examBody').innerHTML = ''; $('examPick').innerHTML = ''; $('examTitle').innerText = ''; $('examResult').style.display = 'none';
+    updateHeader(); loadVocabByLevel(); setShadowLevel(); renderHist(); newFill(); newTask();
+    alert('รีเซ็ตเรียบร้อย เริ่มเรียนใหม่ที่ HSK 1 ได้เลย');
+  };
+
+  updateHeader(); loadVocabByLevel(); setShadowLevel(); newFill(); newTask();
+})();
+</script>
+
+<script>
+/* ===== เนื้อหาสองภาษา: ความหมายคำศัพท์และคำแปลประโยคเป็นอังกฤษ (ตอนนี้ครบ HSK 1 + ประโยคพูดตามทุกระดับ) ===== */
+(function () {
+  const EN1 = [["爱", "love; like", "I love Chinese food."], ["八", "eight", "I have eight books."], ["爸爸", "dad; father", "My dad is a doctor."], ["杯子", "cup; glass", "There is a cup on the table."], ["北京", "Beijing", "I want to travel to Beijing."], ["本", "measure word for books", "I have two books."], ["不", "not; no", "I'm not going to school."], ["菜", "dish; vegetable", "This dish is delicious."], ["茶", "tea", "I like drinking tea."], ["吃", "to eat", "What would you like to eat?"], ["出租车", "taxi", "I take a taxi to the hospital."], ["大", "big; large", "This house is very big."], ["的", "of; 's (possessive)", "This is my cup."], ["点", "o'clock; dot", "It is three o'clock now."], ["电脑", "computer", "He is using a computer."], ["电视", "television", "My dad watches TV."], ["电影", "movie", "Let's go watch a movie."], ["东西", "thing; stuff", "I want to buy something."], ["都", "all; both", "We are all students."], ["读", "to read", "I'm reading."], ["对不起", "sorry", "Sorry, I'm late."], ["多", "many; much", "There are a lot of people here."], ["多少", "how many; how much", "How much is this?"], ["儿子", "son", "His son is eight years old."], ["二", "two", "Today is February 2nd."], ["飞机", "airplane", "I take a plane to Beijing."], ["分钟", "minute", "I waited five minutes."], ["高兴", "happy; glad", "Nice to meet you."], ["个", "general measure word", "I have three friends."], ["工作", "to work; job", "Dad works at the hospital."], ["狗", "dog", "I have a dog."], ["汉语", "Chinese (language)", "I'm studying Chinese."], ["好", "good; well", "The weather is nice today."], ["喝", "to drink", "I want to drink water."], ["和", "and", "My friend and I go to the shop."], ["很", "very", "She is very pretty."], ["后面", "behind; back", "The school is behind the hospital."], ["回", "to return", "I go home at six."], ["会", "can; to know how to", "I can speak Chinese."], ["几", "how many", "How many people are in your family?"], ["家", "home; family", "My home is very big."], ["叫", "to be called", "My name is Xiao Ming."], ["今天", "today", "Today is Friday."], ["九", "nine", "It is nine o'clock now."], ["开", "to open; to drive", "He is driving."], ["看", "to look; to watch", "I watch TV."], ["看见", "to see", "I saw him."], ["块", "yuan (money)", "This apple costs three yuan."], ["来", "to come", "Please come to my home."], ["老师", "teacher", "The teacher is very nice."], ["冷", "cold", "It is cold today."], ["里", "inside", "There is water in the cup."], ["六", "six", "I have six books."], ["妈妈", "mom; mother", "Mom is at home."], ["买", "to buy", "I want to buy apples."], ["没关系", "it doesn't matter", "No need to apologize, it's fine."], ["没有", "don't have; there isn't", "I don't have time."], ["米饭", "cooked rice", "I'd like a bowl of rice."], ["名字", "name", "What is your name?"], ["明天", "tomorrow", "Tomorrow I'm going to Beijing."], ["哪", "which; where", "Which country are you from?"], ["那", "that", "That is my book."], ["能", "can; to be able to", "Can you come?"], ["你", "you", "How are you?"], ["年", "year", "I've studied Chinese for three years."], ["女儿", "daughter", "Her daughter is very pretty."], ["朋友", "friend", "He is my friend."], ["漂亮", "pretty; beautiful", "This piece of clothing is very pretty."], ["苹果", "apple", "I like eating apples."], ["七", "seven", "It is seven o'clock now."], ["前面", "in front; ahead", "The shop is in front of the school."], ["钱", "money", "I have no money."], ["请", "please; to invite", "Please sit down."], ["去", "to go", "I want to go to the shop."], ["热", "hot", "The weather is hot."], ["人", "person; people", "He is Chinese."], ["认识", "to know (someone)", "I know him."], ["三", "three", "I have three cups."], ["商店", "shop; store", "There are lots of things in the shop."], ["上午", "morning", "I go to school in the morning."], ["少", "few; little", "There are few people here."], ["谁", "who", "Who is he?"], ["什么", "what", "What is this?"], ["十", "ten", "I have ten apples."], ["时候", "time; when", "When are you coming?"], ["是", "to be; is", "He is my teacher."], ["书", "book", "This is my book."], ["水", "water", "Please give me a glass of water."], ["水果", "fruit", "I like eating fruit."], ["睡觉", "to sleep", "I want to sleep."], ["说", "to speak; to say", "Please speak Chinese."], ["四", "four", "There are four people in my family."], ["岁", "years old", "My son is five years old."], ["他", "he; him", "He is my classmate."], ["她", "she; her", "She is a doctor."], ["太", "too; extremely", "It's too hot today."], ["天气", "weather", "The weather is cold today."], ["听", "to listen", "I'm listening to the teacher talk."], ["同学", "classmate", "I have many classmates."], ["五", "five", "I have five friends."], ["我", "I; me", "I love my home."], ["喜欢", "to like", "I like studying Chinese."], ["下午", "afternoon", "I'm at home in the afternoon."], ["现在", "now", "What time is it now?"], ["想", "to want; to think", "I want to go to China."], ["小", "small; little", "This dog is very small."], ["谢谢", "thanks; thank you", "Thank you."], ["星期", "week", "What day is it today?"], ["学生", "student", "I'm a student."], ["学习", "to study", "I study Chinese every day."], ["学校", "school", "I'm going to school."], ["一", "one", "I have one cup."], ["医生", "doctor", "The doctor works at the hospital."], ["医院", "hospital", "The hospital is ahead."], ["衣服", "clothes", "This piece of clothing is very big."], ["椅子", "chair", "The chair is behind the table."], ["有", "to have; there is", "I have a friend."], ["月", "month; moon", "There are twelve months in a year."], ["再见", "goodbye", "Goodbye, teacher!"], ["在", "to be at; in", "I'm at home."], ["怎么", "how", "How do you read this character?"], ["这", "this", "This is my home."], ["中国", "China", "China is very big."], ["住", "to live; to stay", "I live in Beijing."], ["桌子", "table; desk", "The table is very big."], ["昨天", "yesterday", "I was at home yesterday."], ["坐", "to sit", "Please sit here."], ["做", "to do; to make", "What are you doing?"]], SHEN = [["你好吗？", "How are you?"], ["我是学生。", "I am a student."], ["这是我的书。", "This is my book."], ["我想喝茶。", "I want to drink tea."], ["我爱我的家。", "I love my home."], ["今天星期几？", "What day is it today?"], ["我想去商店买苹果。", "I want to go to the shop to buy apples."], ["你叫什么名字？", "What is your name?"], ["明天我们一起去北京。", "Tomorrow we are going to Beijing together."], ["谢谢，再见！", "Thank you, goodbye!"], ["你准备好了吗？", "Are you ready?"], ["我每天早上六点起床。", "I get up at six every morning."], ["他比我高。", "He is taller than me."], ["请你告诉我他的名字。", "Please tell me his name."], ["我每天都去跑步。", "I go running every day."], ["请问，火车站在哪儿？", "Excuse me, where is the train station?"], ["因为下雨，所以我不去。", "Because it's raining, I'm not going."], ["我已经吃过早饭了。", "I have already had breakfast."], ["这件衣服太贵了。", "This piece of clothing is too expensive."], ["你喜欢什么颜色？", "What colour do you like?"], ["这个问题不太难。", "This question isn't too hard."], ["我已经习惯了这里的生活。", "I've already gotten used to life here."], ["他突然站了起来。", "He suddenly stood up."], ["我对这次旅行很满意。", "I'm very satisfied with this trip."], ["我对这个问题很感兴趣。", "I'm very interested in this question."], ["请把地图给我看看。", "Please show me the map."], ["他不但聪明，而且很努力。", "He is not only smart but also very hardworking."], ["我家附近有一个大公园。", "There is a big park near my home."], ["别担心，一切都会好的。", "Don't worry, everything will be fine."], ["考试前我要好好复习。", "I need to review well before the exam."], ["他积极参加各种活动。", "He actively takes part in all kinds of activities."], ["我们应该避免这样的错误。", "We should avoid mistakes like this."], ["这本书对我影响很大。", "This book has had a big influence on me."], ["这个城市吸引了很多游客。", "This city attracts many tourists."], ["不管遇到什么困难，我都不会放弃。", "No matter what difficulties I meet, I won't give up."], ["这个城市发展得非常快。", "This city is developing very fast."], ["我本来想去，可是太忙了。", "I originally wanted to go, but I was too busy."], ["请你再说一遍，好吗？", "Could you say it once more, please?"], ["他的汉语说得越来越标准。", "His Chinese is getting more and more standard."], ["我们应该保护环境。", "We should protect the environment."], ["每个人都要承担自己的责任。", "Everyone must take responsibility for themselves."], ["艺术需要创造力。", "Art needs creativity."], ["我们要努力维持良好的关系。", "We must work hard to maintain good relationships."], ["这个地区缺乏水资源。", "This region lacks water resources."], ["这次经历让我学到了很多东西。", "This experience taught me a lot."], ["只要努力，就一定会有收获。", "As long as you work hard, you will surely gain something."], ["他对工作的态度非常认真。", "He takes a very serious attitude toward his work."], ["我们应该珍惜现在的生活。", "We should cherish our present life."], ["不要因为一次失败就感到悲观。", "Don't feel pessimistic because of a single failure."], ["这个问题需要从不同的角度来思考。", "This issue needs to be thought about from different angles."], ["法律保障公民的基本权利。", "The law protects citizens' basic rights."], ["我们要抓住问题的本质。", "We must grasp the essence of the problem."], ["新技术颠覆了传统行业。", "New technology has disrupted traditional industries."], ["每种方法都有它的局限。", "Every method has its limitations."], ["科技的进步改变了人们的生活方式。", "Technological progress has changed people's way of life."], ["面对挑战，我们必须保持冷静。", "When facing challenges, we must stay calm."], ["他的观点具有很强的说服力。", "His viewpoint is very persuasive."], ["这项政策对经济发展产生了深远的影响。", "This policy has had a far-reaching impact on economic development."], ["我们不能只看表面现象，而要抓住本质。", "We can't just look at surface appearances; we must grasp the essence."], ["传统文化需要一代又一代人去传承。", "Traditional culture needs to be passed down by generation after generation."]], map = {};
+  EN1.forEach(a => { map[a[0]] = a; });
+  vocab[1].forEach(w => { const a = map[w.h]; if (a) { w.mEn = a[1]; w.exEn = a[2]; } });
+  const en = {}; SHEN.forEach(a => { en[a[0]] = a[1]; });
+  for (const L in SH) SH[L].forEach(x => { x[3] = en[x[0]]; });
+  SH[6][1][2] = 'เมื่อเผชิญความท้าทาย เราต้องรักษาสติให้สงบ';
+  function apply() {
+    const e = document.documentElement.lang === 'en';
+    for (const L in vocab) vocab[L].forEach(w => { if (!w._th) w._th = { m: w.m, t: w.exTh }; w.m = e && w.mEn ? w.mEn : w._th.m; w.exTh = e && w.exEn ? w.exEn : w._th.t; });
+    for (const L in SH) SH[L].forEach(x => { if (x._th === undefined) x._th = x[2]; x[2] = e && x[3] ? x[3] : x._th; });
+    const i = sIdx; setShadowLevel(); sIdx = Math.min(i, SENT.length - 1); showShadow(); showCard(); newFill(); newTask();
+    if (exam.q && exam.q.length) buildExam(exam.L, exam.s);
+  }
+  const _sl = window.setLang; window.setLang = function (l) { _sl(l); apply(); };
+  apply();
+})();
+</script>
 </body>
 </html>
